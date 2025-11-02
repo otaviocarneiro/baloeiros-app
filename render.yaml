@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "baloeiros-backend",
+  "type": "web",
+  "env": "node",
+  "plan": "free",
+  "buildCommand": "cd backend && npm install",
+  "startCommand": "cd backend && npm start",
+  "healthCheckPath": "/health",
+  "envVars": [
+    {
+      "key": "NODE_ENV",
+      "value": "production"
+    },
+    {
+      "key": "PORT",
+      "value": "10000"
+    }
+  ]
+}
