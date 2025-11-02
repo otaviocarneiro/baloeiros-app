@@ -65,33 +65,51 @@
 
 ---
 
-## 🎯 Frontend na Vercel
+## 🎯 Frontend na Vercel - CONFIGURAÇÃO CORRETA
+
+### **Método 1: Configuração Automática (Recomendado)**
 
 1. **Acesse:** https://vercel.com
-2. **"New Project" → Conecte `otaviocarneiro/baloeiros-app`**
-3. **Configuração IMPORTANTE:**
+2. **Delete o projeto atual** se já existe
+3. **"New Project" → Conecte `otaviocarneiro/baloeiros-app`**
+4. **Vercel detectará automaticamente** (agora tem package.json na raiz)
+5. **Configuração automática:**
    ```
-   Framework Preset: Create React App
-   Root Directory: frontend
+   Framework Preset: Other
    Build Command: npm run build
-   Output Directory: build
+   Output Directory: frontend/build
    Install Command: npm install
    ```
 
-4. **Variável de Ambiente (CRÍTICA):**
-   ```
-   REACT_APP_API_URL=https://baloeiros-backend.onrender.com/api
-   ```
-   ⚠️ **Substitua pela URL real do seu backend Render**
+### **Método 2: Configuração Manual**
 
-5. **Se der 404, verifique:**
-   - Root Directory está como `frontend`
-   - Build foi bem-sucedido
-   - Variável de ambiente está configurada
+Se automático falhar:
+```
+Framework Preset: Create React App
+Root Directory: (deixe vazio)
+Build Command: cd frontend && npm install && npm run build
+Output Directory: frontend/build
+Install Command: cd frontend && npm install
+Dev Command: cd frontend && npm start
+```
 
-### 🔧 Configuração Manual (se automático falhar):
-- **Build Command:** `cd frontend && npm run build`
-- **Output Directory:** `frontend/build`
+### **Variáveis de Ambiente:**
+```
+REACT_APP_API_URL=https://baloeiros-backend.onrender.com/api
+```
+
+### **Se ainda der 404:**
+
+1. **Verifique Build Logs** no Vercel Dashboard
+2. **Force Redeploy** 
+3. **Certifique que Output Directory** é `frontend/build`
+4. **Verifique se build/ existe** na pasta frontend
+
+### 🔧 **Debug 404:**
+- Build bem-sucedido? ✅
+- Output Directory correto? ✅ 
+- vercel.json na raiz? ✅
+- Rewrites configurados? ✅
 
 ---
 
