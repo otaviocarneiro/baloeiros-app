@@ -69,18 +69,29 @@
 
 1. **Acesse:** https://vercel.com
 2. **"New Project" → Conecte `otaviocarneiro/baloeiros-app`**
-3. **Configuração:**
+3. **Configuração IMPORTANTE:**
    ```
-   Framework: Create React App
+   Framework Preset: Create React App
    Root Directory: frontend
    Build Command: npm run build
    Output Directory: build
+   Install Command: npm install
    ```
 
-4. **Variável de Ambiente:**
+4. **Variável de Ambiente (CRÍTICA):**
    ```
    REACT_APP_API_URL=https://baloeiros-backend.onrender.com/api
    ```
+   ⚠️ **Substitua pela URL real do seu backend Render**
+
+5. **Se der 404, verifique:**
+   - Root Directory está como `frontend`
+   - Build foi bem-sucedido
+   - Variável de ambiente está configurada
+
+### 🔧 Configuração Manual (se automático falhar):
+- **Build Command:** `cd frontend && npm run build`
+- **Output Directory:** `frontend/build`
 
 ---
 

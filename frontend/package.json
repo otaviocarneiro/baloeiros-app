@@ -1,7 +1,8 @@
 {
-  "name": "volei-confirma-frontend",
+  "name": "baloeiros-frontend",
   "version": "1.0.0",
-  "description": "Frontend para app de gerenciamento de presença de vôlei",
+  "description": "Frontend para app Baloeiros - gerenciamento de presença de vôlei",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
