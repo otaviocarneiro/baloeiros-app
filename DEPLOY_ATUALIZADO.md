@@ -26,6 +26,17 @@
    Name: baloeiros-backend
    Region: Ohio (US East)
    Branch: master
+   Root Directory: (deixe vazio - raiz do projeto)
+   Runtime: Docker
+   Build Command: (deixe vazio - Docker automático)
+   Start Command: (deixe vazio - Docker automático)
+   ```
+
+   **OU se preferir Node.js:**
+   ```
+   Name: baloeiros-backend
+   Region: Ohio (US East)
+   Branch: master
    Root Directory: backend
    Runtime: Node
    Build Command: npm install
