@@ -1,0 +1,47 @@
+Voce e um especialista node.js e vai me ajudar a desenvolver um app tanto para celulares como para pc, que  seja custo zero
+pode ser algo na linha do firebase do gcp,  para que eu consiga semanalmente, gerenciar a lista de presenca de quem
+queira jogar, e que possa por exemplo, identificar pelo nome se e homem ou mulher e se joga na posicao de libero. Ainda sera
+necessario ter um item de nivel de cada jogador, pois devera ter um sistema de sorteio dos time de maneira que sempre
+equilibre um levantador de cada lado, mesmo numero de homens e mulheres e niveis.
+
+Seria bom ter uma lista com as pessoas cadastradas e que pudessem ser checadas para confirmacao.
+
+
+esse e o modelo de lista hoje no whatsapp:
+
+Vôlei Campo dos Alemães
+🏐 🏐 🏐
+Sáb. 13-17h
+
+Grupo (D-2 ▪ 20h):
+01.Rangel 
+02.Eliel
+03.Mateus
+04.Scarlet
+05.Davi
+06.Luis
+07.Luiz fontes 
+08.Michael
+09.Lucas
+10.David
+11.Alê
+12.Alisson
+13.JP 
+14.mateus / amigo Luiz 
+15.Nilton/luis
+16.Carlinhos/luis
+17.Pacheco/luis
+18.Jonathan/luis
+
+Espera (D-1 ▪ 17h):
+1.
+2.leandro/david
+3.kessy/david
+4.Matheuzinho
+5.
+6.matheus j
+
+(D-1 > 17h): Convidados liberados p/ lista de espera.
+
+
+deve ter uma possibilidade de carga por arquivo csv.
