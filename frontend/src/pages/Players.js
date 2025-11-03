@@ -22,6 +22,7 @@ const Players = () => {
 
   useEffect(() => {
     filterPlayers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [players, searchTerm, filterPosition, filterGender]);
 
   const loadPlayers = async () => {

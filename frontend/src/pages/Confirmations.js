@@ -24,6 +24,7 @@ const Confirmations = () => {
     if (selectedEvent) {
       loadEventConfirmations();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedEvent]);
 
   const loadInitialData = async () => {

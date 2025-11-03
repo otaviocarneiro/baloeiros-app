@@ -19,6 +19,7 @@ const Teams = () => {
     if (selectedEvent) {
       loadEventPlayers();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedEvent]);
 
   const loadEvents = async () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Users, UserCheck, Trophy, TrendingUp } from 'lucide-react';
+import { Calendar, Users, UserCheck, Trophy } from 'lucide-react';
 import { eventsAPI, playersAPI, confirmationsAPI } from '../services/api';
 import toast from 'react-hot-toast';
 
@@ -82,7 +82,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          🏐 Baloeiros Dashboard
+          🏐 VoleiConfirma Dashboard
         </h1>
         <p className="text-xl text-gray-600">
           Gerencie seu time de vôlei de forma simples e eficiente
