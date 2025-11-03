@@ -12,17 +12,30 @@ app.use(helmet());
 // Configuração de CORS para produção e desenvolvimento
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',')
-  : ['http://localhost:3000', 'http://localhost:3001'];
+  : [
+    'http://localhost:3000', 
+    'http://localhost:3001',
+    'https://baloeiros-app.vercel.app',
+    'https://baloeiros-frontend.vercel.app',
+    'https://vercel.app'
+  ];
 
 app.use(cors({
   origin: function (origin, callback) {
     // Permite requests sem origin (mobile apps, etc.)
     if (!origin) return callback(null, true);
     
+    // Permite origins na lista ou desenvolvimento
     if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      // Em produção, permite qualquer subdomínio .vercel.app
+      if (origin && origin.includes('.vercel.app')) {
+        callback(null, true);
+      } else {
+        console.log('CORS blocked origin:', origin);
+        callback(new Error('Not allowed by CORS'));
+      }
     }
   },
   credentials: true
