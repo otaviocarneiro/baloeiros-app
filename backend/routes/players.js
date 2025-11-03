@@ -42,7 +42,11 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     console.log('POST /api/players - Dados recebidos:', req.body);
-    const { error, value } = playerSchema.validate(req.body);
+    
+    // Remove campos que não devem ser criados manualmente
+    const { id, created_at, updated_at, ...createData } = req.body;
+    
+    const { error, value } = playerSchema.validate(createData);
     if (error) {
       console.log('Erro de validação POST:', error.details[0].message);
       return res.status(400).json({ error: error.details[0].message });
@@ -60,10 +64,14 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     console.log('PUT /api/players/:id - Dados recebidos:', req.body);
-    const { error, value } = playerSchema.validate(req.body);
+    
+    // Remove campos que não devem ser atualizados
+    const { id, created_at, updated_at, ...updateData } = req.body;
+    
+    const { error, value } = playerSchema.validate(updateData);
     if (error) {
       console.log('Erro de validação:', error.details[0].message);
-      console.log('Dados que falharam na validação:', req.body);
+      console.log('Dados que falharam na validação:', updateData);
       return res.status(400).json({ error: error.details[0].message });
     }
 
