@@ -65,47 +65,35 @@
 
 ---
 
-## 🎯 Frontend na Vercel - CONFIGURAÇÃO EXATA
+## 🎯 Frontend na Vercel - CONFIGURAÇÃO DEFINITIVA
 
-### **⚠️ IMPORTANTE: DELETE o projeto atual e recrie**
+### **⚠️ IMPORTANTE: DELETE e RECRIE o projeto**
 
-1. **Acesse:** https://vercel.com
-2. **Delete projeto existente** 
-3. **"New Project" → Conecte `otaviocarneiro/baloeiros-app`**
+### **📋 Configuração FINAL (testada):**
 
-### **📋 Configuração EXATA (copie/cole):**
+1. **Framework Preset:** `Create React App`
+2. **Root Directory:** `frontend`
+3. **Build Command:** `npm run build`
+4. **Output Directory:** `build`
+5. **Install Command:** `npm install`
 
-```
-Framework Preset: Other
-Root Directory: (deixe vazio)
-Build Command: cd frontend && npm install && npm run build
-Output Directory: frontend/build
-Install Command: npm install
-```
+### **🔧 NÃO usar configuração manual complexa**
 
-### **🔧 Configuração Manual Detalhada:**
+**Configuração SIMPLES no Vercel:**
+- ✅ Framework: Create React App
+- ✅ Root Directory: `frontend`
+- ✅ Deixar comandos padrão
+- ✅ vercel.json simplificado
 
-No dashboard do Vercel:
-- **Project Name:** baloeiros-app
-- **Framework:** Other (não Create React App)
-- **Root Directory:** ` ` (vazio - muito importante!)
-- **Build Command:** `cd frontend && npm install && npm run build`
-- **Output Directory:** `frontend/build`
-- **Install Command:** `npm install`
-- **Development Command:** `cd frontend && npm start`
-
-### **🌐 Variável de Ambiente (após deploy):**
+### **🌐 Variável de Ambiente:**
 ```
 REACT_APP_API_URL=https://baloeiros-backend.onrender.com/api
 ```
 
-### **✅ Checklist Final:**
-- [ ] Projeto deletado e recriado
-- [ ] Framework = "Other" 
-- [ ] Root Directory = vazio
-- [ ] Build Command com "cd frontend"
-- [ ] Output Directory = "frontend/build"
-- [ ] Variável de ambiente configurada
+### **✅ Por que essa configuração funciona:**
+- **Root Directory = frontend** → Vercel entra na pasta correta
+- **Framework = Create React App** → Detecção automática
+- **vercel.json simples** → Apenas rewrites para SPA
 
 ---
 
