@@ -65,51 +65,47 @@
 
 ---
 
-## 🎯 Frontend na Vercel - CONFIGURAÇÃO CORRETA
+## 🎯 Frontend na Vercel - CONFIGURAÇÃO EXATA
 
-### **Método 1: Configuração Automática (Recomendado)**
+### **⚠️ IMPORTANTE: DELETE o projeto atual e recrie**
 
 1. **Acesse:** https://vercel.com
-2. **Delete o projeto atual** se já existe
+2. **Delete projeto existente** 
 3. **"New Project" → Conecte `otaviocarneiro/baloeiros-app`**
-4. **Vercel detectará automaticamente** (agora tem package.json na raiz)
-5. **Configuração automática:**
-   ```
-   Framework Preset: Other
-   Build Command: npm run build
-   Output Directory: frontend/build
-   Install Command: npm install
-   ```
 
-### **Método 2: Configuração Manual**
+### **📋 Configuração EXATA (copie/cole):**
 
-Se automático falhar:
 ```
-Framework Preset: Create React App
+Framework Preset: Other
 Root Directory: (deixe vazio)
 Build Command: cd frontend && npm install && npm run build
 Output Directory: frontend/build
-Install Command: cd frontend && npm install
-Dev Command: cd frontend && npm start
+Install Command: npm install
 ```
 
-### **Variáveis de Ambiente:**
+### **🔧 Configuração Manual Detalhada:**
+
+No dashboard do Vercel:
+- **Project Name:** baloeiros-app
+- **Framework:** Other (não Create React App)
+- **Root Directory:** ` ` (vazio - muito importante!)
+- **Build Command:** `cd frontend && npm install && npm run build`
+- **Output Directory:** `frontend/build`
+- **Install Command:** `npm install`
+- **Development Command:** `cd frontend && npm start`
+
+### **🌐 Variável de Ambiente (após deploy):**
 ```
 REACT_APP_API_URL=https://baloeiros-backend.onrender.com/api
 ```
 
-### **Se ainda der 404:**
-
-1. **Verifique Build Logs** no Vercel Dashboard
-2. **Force Redeploy** 
-3. **Certifique que Output Directory** é `frontend/build`
-4. **Verifique se build/ existe** na pasta frontend
-
-### 🔧 **Debug 404:**
-- Build bem-sucedido? ✅
-- Output Directory correto? ✅ 
-- vercel.json na raiz? ✅
-- Rewrites configurados? ✅
+### **✅ Checklist Final:**
+- [ ] Projeto deletado e recriado
+- [ ] Framework = "Other" 
+- [ ] Root Directory = vazio
+- [ ] Build Command com "cd frontend"
+- [ ] Output Directory = "frontend/build"
+- [ ] Variável de ambiente configurada
 
 ---
 
