@@ -9,8 +9,8 @@ const playerSchema = Joi.object({
   gender: Joi.string().valid('M', 'F').required(),
   position: Joi.string().valid('levantador', 'libero', 'atacante', 'meio', 'oposto', 'outros').required(),
   level: Joi.number().integer().min(1).max(5).required(),
-  phone: Joi.string().optional(),
-  email: Joi.string().email().optional()
+  phone: Joi.string().allow('', null).optional(),
+  email: Joi.string().email().allow('', null).optional()
 });
 
 // GET /api/players - Listar todos os jogadores
@@ -41,8 +41,10 @@ router.get('/:id', async (req, res) => {
 // POST /api/players - Criar novo jogador
 router.post('/', async (req, res) => {
   try {
+    console.log('POST /api/players - Dados recebidos:', req.body);
     const { error, value } = playerSchema.validate(req.body);
     if (error) {
+      console.log('Erro de validação POST:', error.details[0].message);
       return res.status(400).json({ error: error.details[0].message });
     }
 
@@ -57,8 +59,11 @@ router.post('/', async (req, res) => {
 // PUT /api/players/:id - Atualizar jogador
 router.put('/:id', async (req, res) => {
   try {
+    console.log('PUT /api/players/:id - Dados recebidos:', req.body);
     const { error, value } = playerSchema.validate(req.body);
     if (error) {
+      console.log('Erro de validação:', error.details[0].message);
+      console.log('Dados que falharam na validação:', req.body);
       return res.status(400).json({ error: error.details[0].message });
     }
 
